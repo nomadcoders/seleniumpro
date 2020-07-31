@@ -13,4 +13,7 @@ search_bar.send_keys(Keys.ENTER)
 
 search_results = browser.find_elements_by_class_name("g")
 
-print(search_results)
+for search_result in search_results:
+    title = search_result.find_element_by_tag_name("h3")
+    if title:
+        print(title.text)
