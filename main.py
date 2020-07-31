@@ -21,15 +21,17 @@ shitty_element = WebDriverWait(browser, 10).until(
     EC.presence_of_element_located((By.CLASS_NAME, "g-blk"))
 )
 
-print(shitty_element)
+browser.execute_script(
+    """
+const shitty = arguments[0];
+shitty.parentElement.removeChild(shitty)
+""",
+    shitty_element,
+)
 
-
-""" search_results = browser.find_elements_by_class_name("g")
+search_results = browser.find_elements_by_class_name("g")
 
 for index, search_result in enumerate(search_results):
-    class_name = search_result.get_attribute("class")
-    if "kno-kp mnr-c g-blk" not in class_name:
-        search_result.screenshot(f"screenshots/{KEYWORD}x{index}.png")
- """
+    search_result.screenshot(f"screenshots/{KEYWORD}x{index}.png")
 
-# browser.quit()
+browser.quit()
