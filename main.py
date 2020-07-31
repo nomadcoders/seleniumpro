@@ -35,6 +35,7 @@ class GoogleKeywordScreenshooter:
             search_result.screenshot(
                 f"{self.screenshots_dir}/{self.keyword}x{index}.png"
             )
+        self.finish()
 
     def finish(self):
         self.browser.quit()
@@ -42,7 +43,5 @@ class GoogleKeywordScreenshooter:
 
 domain_competitors = GoogleKeywordScreenshooter("buy domain", "screenshots")
 domain_competitors.start()
-domain_competitors.finish()
 python_competitors = GoogleKeywordScreenshooter("python book", "screenshots")
 python_competitors.start()
-python_competitors.finish()
