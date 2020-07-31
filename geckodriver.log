@@ -18,3 +18,4 @@ init/<()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/compon
 1596179580250	Marionette	INFO	Listening on port 53315
 1596179580347	Marionette	WARN	TLS certificate errors will be ignored for this session
 1596179654293	Marionette	INFO	Stopped listening on port 53315
+Invalid port. Exiting...
